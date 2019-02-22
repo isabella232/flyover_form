@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+    </ion-header>
+    
+    <ion-content padding>
+    <form [formGroup]="storymap"(ngSubmit)="logForm()">
+      <ion-item>
+           <ion-label color="primary">URL</ion-label>
+           <ion-input type="text" placeholder="Storymap URL" formControlName="storymapurl" [(ngModel)]="inputName"></ion-input>
+           <button item-right ion-button (click) = "logForm()">Get Data</button>
+     </ion-item>
+     <ion-item>
+       <ion-label>Storymap Title:</ion-label>
+       <ion-input type="text" formControlName="title" [(ngModel)] ="title"></ion-input>
+     </ion-item>
+     <ion-item>
+        <ion-label>Author:</ion-label>
+        <ion-input type="text" formControlName="author" [(ngModel)] ="author"></ion-input>
+     </ion-item>
+     <ion-item>
+       <ion-label>Description:</ion-label>
+       <ion-textarea type="text" formControlName="description" [(ngModel)] ="subtitle" ></ion-textarea>
+     </ion-item>
+     <ion-item>
+        <ion-label stacked>Pick Attributes</ion-label>
+          <ion-select formControlName="attributes" interface="popover" >
+              <ion-item *ngFor="let attribute of attributes" no-lines>
+                <ion-option value="attribute.thumb_url"></ion-option>
+                <ion-option value="attributes.pic_url"></ion-option>
+              </ion-item>
+          </ion-select>
+     </ion-item>
+     <ion-item>
+       <button ion-button [disabled]="geometry.length > 0">True</button>
+      
+     
+       <ion-card>
+          <ion-card-content>
+            <ion-item>
+              <ion-card-title>
+                {{attributes.description}}
+              </ion-card-title>
+            </ion-item>
+          </ion-card-content>
+          <img [src]='attributes.pic_url' />
+    
+        </ion-card>
+      </ion-item>
+     <button ion-button type="submit" [disabled]="!storymap.valid">Submit</button>
+    </form>
+    </ion-content>
