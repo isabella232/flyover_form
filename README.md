@@ -2,6 +2,12 @@
 ionic form for storymaps
 
 
+### Depedencies
+
+##### Node.js
+
+Node.js of at least version 6.4.0 is required
+
 ### App
 
 First navigate to the app directory and install dependencies
