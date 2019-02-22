@@ -2,11 +2,11 @@
 ionic form for storymaps
 
 
-App
+#App
 First navigate to the app directory and install dependencies
 
-cd app && npm install
+#cd app && npm install
 For local development you can run the Ionic dev server which includes automatic reloading:
 
-ionic serve
+#ionic serve
 You can now open your browser to http://localhost:8100 to view the app
